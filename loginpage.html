@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* fieldset{
+        position: relative;
+        top: 150px;
+        width: 400px;
+        left: 100px;
+      background-color:rgb(68, 28, 105);
+        color: white;
+      }
+      body{
+        background-image:url(loginpage.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      } */
+
+      @charset "utf-8";
+        @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+        [class*="fontawesome-"]:before {
+          font-family: 'FontAwesome', sans-serif;
+        }
+
+        body {
+          /* background: rgb(218, 196, 234); */
+          background-image: url(https://img.freepik.com/premium-vector/emerald-luxury-gold-background-golden-silver-polygon-border-3d-abstract-polygonal-sparkle-cover-christmas-new-year-celebration-frame-royal-premium-business-design-luxury-gold-crystal-card_181182-26414.jpg?size=626&ext=jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;  
+          color:rgb(235, 227, 227);
+          font: 100.5%/1.5em 'Open Sans', sans-serif;
+          margin: 0;
+        }
+
+        p {
+          line-height: 1.5em;
+        }
+
+        after { clear: both; }
+
+        .login {
+          margin: 50px auto;
+          width: 320px;
+        }
+
+        .login form {
+          position: relative;
+          top:50px;
+          left:-150px;
+          margin: auto;
+          padding: 22px 22px 22px 22px;
+          width: 100%;
+          height: 350px;
+          border-radius: 30px;
+          font-size: medium;
+          background: #805578; 
+           border-top: 3px solid #434a52;
+          border-bottom: 3px solid #434a52;
+        } 
+
+        .login form span {
+          background-color: #e8dde4;
+          border-radius: 3px 0px 0px 3px;
+          border-right: 3px solid #434a52;
+          color: #606468;
+          display: block;
+          float: left;
+          line-height: 50px;
+          text-align: center;
+          width: 50px;
+          height: 50px;
+        }
+
+        .login form input[type="email"] {
+          background-color: #dacdd3;
+          border-radius: 0px 3px 3px 0px;
+          color: #a9a9a9;
+          margin-bottom: 1em;
+          padding: 0 16px;
+          width: 90%;
+          height: 50px;
+        }
+
+        .login form input[type="password"] {
+          background-color: #dacdd3;
+          border-radius: 0px 3px 3px 0px;
+          color:black;
+          margin-bottom: 1em;
+          padding: 0 16px;
+          width: 90%;
+          height: 50px;
+        }
+
+        .login form input[type="submit"] {
+          background: #b5cd60;
+          border: 0;
+          width: 100%;
+          height: 40px;
+          border-radius: 3px;
+          color: white;
+          cursor: pointer;
+          transition: background 0.3s ease-in-out;
+        }
+        #login form input[type="submit"]:hover {
+          background: #16aa56;
+        }
+
+    </style>
+</head>
+<body>
+   <!-- <form action=" ">
+    <fieldset>
+        <p> </p>
+          
+        Username : &nbsp; &nbsp; &nbsp;<input type="text" id="input1">  <br> <br> 
+       password : &nbsp; &nbsp; &nbsp;<input type="password" id="input2"> <br>  <br>
+      Email:   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="email" > <br> <br>
+     <input type="submit" value="submit">
+        <input type="button" value="reset"  id="res"> -->
+        <!-- <p> </p>
+        <p id="page"> Have  already an account ? <a href="loginpage.html">Login here </a> </p>
+    
+      </fieldset>
+         
+  </form> --> 
+
+  <!-- <div class="login">
+    <form name='form-login'>
+
+        <h1>REGISTER</h1>
+
+        <label for="name">Email</label>
+        <input type="email" id="name" placeholder="sowmyagupta2000@gmail.com" required>
+
+        <label for="pw">Password</label>
+        <input type="password"
+               id= "pw"
+               placeholder="word@1" required>
+
+        <ul class="helper-text">
+            <li class="length">Must be at least 8 characters long.</li>
+            <li class="lowercase">Must contain a lowercase letter.</li>
+            <li class="uppercase">Must contain an uppercase letter.</li>
+            <li class="special">Must contain a number or special character.</li>
+        </ul>
+        <input id="rgstr_btn" type="submit" value="Register" onclick="store()">
+
+    </form>
+</div> -->
+
+<div class="login">
+    <form name='form-login'>
+
+        <h1><center>SIGN IN</center></h1>
+        <br>
+
+        <label for="userName">Email</label>
+        <input type="email" id="userName" placeholder="sowmya" required>
+
+        <label for="userPw">Password</label>
+        <input type="password" id= "userPw" placeholder="word@1" required>
+
+        <div id="remember">
+            <input type="checkbox" value="lsRememberMe" id="rememberMe"
+                   style="display: inline-block;">
+            <label>Remember me</label>
+        </div>
+
+        <input id= "login_btn" type="submit" value="Login" onclick="check()">
+
+    </form>
+</div>
+
+  
+  
+  <script>
+
+
+
+
+
+//checking
+function check(){
+var storedName = localStorage.getItem('name');
+var storedPw = localStorage.getItem('pw');
+
+var userName = document.getElementById('userName');
+var userPw = document.getElementById('userPw');
+var userRemember = document.getElementById("rememberMe");
+
+if(userName.value == storedName && userPw.value == storedPw){
+  window.location.assign("./mainpage.html");
+  
+  alert('You are logged in.');
+}else{
+    alert('Error on login');
+}
+}
+     </script>
+</body>
+</html>
